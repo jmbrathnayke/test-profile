@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-close" id="sidebarClose"></div>
+    
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <ul class="nav_links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <h1 class="logo">iTexphere Solutions</h1>
+                <ul class="nav_links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container">
+            <h2>Your Success, Our Commitment</h2>
+            <p>Delivering excellence in every project we undertake.</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to My Website</h2>
+                <p>Your one-stop solution for all your needs.</p>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="card">
+                    <h3>⚡ Fast Performance</h3>
+                    <p>Lightning-quick loading times and smooth user interactions for optimal user experience.</p>
+                </div>
+                <div class="card">
+                    <h3>🔒 Secure</h3>
+                    <p>Enterprise-grade security protocols to protect your data and ensure peace of mind.</p>
+                </div>
+                <div class="card">
+                    <h3>📱 Responsive</h3>
+                    <p>Seamlessly adapts to any device, providing perfect experience on mobile and desktop.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="two-column">
+            <div class="container">
+                <div class="two-column-wrapper2">
+                    <div class="two-column-content">
+                        <h2>Why Choose Us</h2>
+                        <p>We deliver solutions that transform your business with cutting-edge technology and proven expertise.</p>
+                        <p>Our team is dedicated to understanding your unique needs and providing tailored solutions that drive real results.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                    <div class="two-column-image">
+                        <div class="placeholder-box">
+                            <p>🚀</p>
+                            <p>Innovation at Scale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><br>
+
+        <section style="padding: 80px 20px; background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);">
+            <div class="container">
+                <div class="two-column-wrapper">
+                    <div class="two-column-image">
+                        <div class="placeholder-box">
+                            <p>💼</p>
+                            <p>Professional Services</p>
+                        </div>
+                    </div>
+                    <div class="two-column-content">
+                        <h2>Contact Us</h2>
+                        <p>We'd love to hear from you. Get in touch with us today and let's discuss how we can help transform your business.</p>
+                        <form class="contact-form" action="#" method="post">
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div>
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div>
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        // Get elements
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebarClose');
+        const sidebarLinks = document.querySelectorAll('.sidebar ul li a');
+
+        // Toggle sidebar
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            sidebar.classList.toggle('active');
+            sidebarClose.classList.toggle('active');
+        });
+
+        // Close sidebar when clicking overlay
+        sidebarClose.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            sidebar.classList.remove('active');
+            sidebarClose.classList.remove('active');
+        });
+
+        // Close sidebar when clicking a link
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                sidebar.classList.remove('active');
+                sidebarClose.classList.remove('active');
+            });
+        });
+
+        // Close sidebar on window resize if window is larger than 768px
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                sidebar.classList.remove('active');
+                sidebarClose.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

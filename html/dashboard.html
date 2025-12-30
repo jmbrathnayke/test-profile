@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Loading State -->
+        <div id="loading" class="loading" style="display: none;">
+            Loading your profile...
+        </div>
+
+        <!-- Error State -->
+        <div id="errorContainer" style="display: none;">
+            <div class="error-message">
+                You must be logged in to access this page.
+                <br><br>
+                <a href="signup.html" style="color: white; text-decoration: underline;">Go to Sign Up</a>
+            </div>
+        </div>
+
+        <!-- Dashboard Content (shown when logged in) -->
+        <div id="dashboardContent" style="display: none;">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <h1>Welcome to Your Dashboard! 👋</h1>
+                <p id="welcomeMessage"></p>
+
+                <div class="user-info">
+                    <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                    <p><strong>User ID:</strong> <span id="userId" style="font-size: 12px; color: #999;"></span></p>
+                    <p><strong>Member Since:</strong> <span id="memberSince"></span></p>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-primary" onclick="location.href='index.html'">← Back to Home</button>
+                    <button class="btn-logout" onclick="logout()">Sign Out</button>
+                </div>
+            </div>
+
+            <!-- User Profile Section -->
+            <div class="user-profile">
+                <div class="profile-section">
+                    <h2>Account Information</h2>
+                    <div class="profile-item">
+                        <label>Full Name</label>
+                        <span id="fullName">Not set</span>
+                    </div>
+                    <div class="profile-item">
+                        <label>Email Address</label>
+                        <span id="emailDisplay"></span>
+                    </div>
+                    <div class="profile-item">
+                        <label>Last Sign In</label>
+                        <span id="lastSignIn">-</span>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Account Status</h2>
+                    <div class="profile-item">
+                        <label>Email Confirmed</label>
+                        <span id="emailConfirmed">Pending</span>
+                    </div>
+                    <div class="profile-item">
+                        <label>Account Type</label>
+                        <span id="accountType">Standard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Config (credentials) -->
+    <script src="../js/config.js"></script>
+    
+    <!-- Dashboard Script -->
+    <script src="../js/Dashboard.js"></script>
+    
+  
+</body>
+</html>
