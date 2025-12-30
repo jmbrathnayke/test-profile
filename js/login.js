@@ -109,7 +109,7 @@
                 document.getElementById('remember').checked = true;
             }
 
-            // Don't auto-redirect - let user stay on login page
+            
         });
 
         // Listen for OAuth callback only (not initial session)
